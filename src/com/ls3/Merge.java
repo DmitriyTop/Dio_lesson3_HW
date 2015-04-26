@@ -14,41 +14,34 @@ public class Merge implements Comparator {
             totalElementsFoundInRightArray++;
         }
 //        System.out.println("resArray " + Arrays.toString(resArray));
-//        Arrays.sort(resArray);
+        Arrays.sort(resArray);
 //        System.out.println("Sorted resArray " + Arrays.toString(resArray));
 
-//        int[] temp = new int[leftArray.length + rightArray.length];
-//        temp[0] = resArray[0];
+        int[] temp = new int[leftArray.length + rightArray.length];
+        int count = 0;
 
-//        for (int index = 0; index < resArray.length-1; index++) {
-//            for (int indexNew = index+1; indexNew < resArray.length; indexNew++) {
-//                if(resArray[index] < resArray[indexNew]) {
-//                    if (index>0 & resArray[index] == resArray[index-1]) {
-//                        break;
-//                    } else {
-//                        temp[index-1] = resArray[index];
-//                        break;
-//                    }
-//                } else {
-//                    temp[index] = resArray[indexNew];
-//                    System.out.println("temp " + Arrays.toString(temp));
-//                    break;
-//                }
-//            }
-//        }
+        for (int index = 0; index < resArray.length-1; index++) {
+            if(resArray[index] < resArray[index+1]) {
+                temp[count] = resArray[index];
+                count++;
+            }
+            if(index+1 == resArray.length-1) {
+                temp[count] = resArray[index+1];
+            }
+        }
 
 //        System.out.println("temp " + Arrays.toString(temp));
 
-        int[] finalArray = Arrays.copyOf(resArray, leftArray.length + totalElementsFoundInRightArray);
+        int[] finalArray = Arrays.copyOf(temp, count+1);
         return finalArray;
     }
 
     @Override
     public boolean compare(int[] returnedValue, int[] expectedValue) {
-        Arrays.sort(returnedValue, 0, returnedValue.length - 1);
-        Arrays.sort(expectedValue, 0, expectedValue.length - 1);
+        Arrays.sort(returnedValue);
+        Arrays.sort(expectedValue);
 
-        if (returnedValue.equals(expectedValue)) {
+        if (Arrays.equals(returnedValue, expectedValue)) {
             return true;
         } else return false;
     }
