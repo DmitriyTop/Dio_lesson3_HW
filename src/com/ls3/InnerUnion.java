@@ -2,7 +2,7 @@ package com.ls3;
 
 import java.util.Arrays;
 
-public class InnerUnion implements Comparator {
+public class InnerUnion {
 
     public int[] innerUnionArrays(int[] leftArray, int[] rightArray) {
         int[] resArray = new int[Math.max(leftArray.length,rightArray.length)];
