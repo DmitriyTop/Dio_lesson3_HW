@@ -3,6 +3,8 @@ package com.ls3;
 import java.util.Arrays;
 
 public class Main {
+
+    //local code review (vtegza): move to Junit test @ 04.05.15
     public static void main(String[] args) {
         testPositive();
         //testLeftArrayIsEmpty();
