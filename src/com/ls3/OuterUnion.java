@@ -44,6 +44,7 @@ public class OuterUnion implements Comparator {
                 }
             }
         }
+        //local code review (vtegza): clean up commented code @ 04.05.15
 //        System.out.println(Arrays.toString(leftOuterArray));
         leftOuterArray = Arrays.copyOf(leftOuterArray, totalElementsFoundInLeftArray);
 
@@ -86,7 +87,7 @@ public class OuterUnion implements Comparator {
     public boolean compare(int[] returnedValue, int[] expectedValue) {
         Arrays.sort(returnedValue);
         Arrays.sort(expectedValue);
-
+        //local code review (vtegza): simplify this expression @ 04.05.15
         if (Arrays.equals(returnedValue, expectedValue)) {
             return true;
         } else return false;

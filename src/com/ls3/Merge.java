@@ -40,7 +40,7 @@ public class Merge implements Comparator {
     public boolean compare(int[] returnedValue, int[] expectedValue) {
         Arrays.sort(returnedValue);
         Arrays.sort(expectedValue);
-
+        //local code review (vtegza): simplify this expression @ 04.05.15
         if (Arrays.equals(returnedValue, expectedValue)) {
             return true;
         } else return false;
